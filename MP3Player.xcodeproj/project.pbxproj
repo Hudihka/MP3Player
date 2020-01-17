@@ -41,6 +41,8 @@
 		CE0DD7AC23D1B58800ED7120 /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0DD7AA23D1B58800ED7120 /* MusicCell.xib */; };
 		CE0DD7AE23D1B7AA00ED7120 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7AD23D1B7AA00ED7120 /* NSObject.swift */; };
 		CE0DD7B023D1BC6700ED7120 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7AF23D1BC6700ED7120 /* TwoViewController.swift */; };
+		CE0DD7B323D1BE3100ED7120 /* ManagerMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7B223D1BE3100ED7120 /* ManagerMusic.swift */; };
+		CE0DD7B523D1D25800ED7120 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7B423D1D25800ED7120 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		CE0DD7AA23D1B58800ED7120 /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
 		CE0DD7AD23D1B7AA00ED7120 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		CE0DD7AF23D1BC6700ED7120 /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
+		CE0DD7B223D1BE3100ED7120 /* ManagerMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerMusic.swift; sourceTree = "<group>"; };
+		CE0DD7B423D1D25800ED7120 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0DD75F23D1AB7000ED7120 /* AppDelegate.swift */,
+				CE0DD7B223D1BE3100ED7120 /* ManagerMusic.swift */,
 				CE0DD7B123D1BC6F00ED7120 /* TwoViewController */,
 				CE0DD7A823D1B21400ED7120 /* FirstVC */,
 				CE0DD76323D1AB7000ED7120 /* Main.storyboard */,
@@ -131,6 +136,7 @@
 			children = (
 				CE0DD77423D1AC8500ED7120 /* UIView.swift */,
 				CE0DD7AD23D1B7AA00ED7120 /* NSObject.swift */,
+				CE0DD7B423D1D25800ED7120 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -287,7 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0DD77623D1AC8500ED7120 /* UIView.swift in Sources */,
+				CE0DD7B323D1BE3100ED7120 /* ManagerMusic.swift in Sources */,
 				CE0DD76023D1AB7000ED7120 /* AppDelegate.swift in Sources */,
+				CE0DD7B523D1D25800ED7120 /* String.swift in Sources */,
 				CE0DD7AE23D1B7AA00ED7120 /* NSObject.swift in Sources */,
 				CE0DD7A723D1B13A00ED7120 /* FirstVC.swift in Sources */,
 				CE0DD7B023D1BC6700ED7120 /* TwoViewController.swift in Sources */,

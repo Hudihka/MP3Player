@@ -18,6 +18,9 @@ class FirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        Music.shared.getFileForIndex(0)
+
         // Do any additional setup after loading the view.
     }
 
