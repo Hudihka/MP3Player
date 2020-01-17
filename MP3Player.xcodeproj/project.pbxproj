@@ -37,6 +37,10 @@
 		CE0DD7A323D1AEF200ED7120 /* track11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE0DD78C23D1AEF100ED7120 /* track11.mp3 */; };
 		CE0DD7A423D1AEF200ED7120 /* track13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE0DD78D23D1AEF100ED7120 /* track13.mp3 */; };
 		CE0DD7A523D1AEF200ED7120 /* track12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE0DD78E23D1AEF100ED7120 /* track12.mp3 */; };
+		CE0DD7A723D1B13A00ED7120 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7A623D1B13A00ED7120 /* FirstVC.swift */; };
+		CE0DD7AB23D1B58800ED7120 /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7A923D1B58800ED7120 /* MusicCell.swift */; };
+		CE0DD7AC23D1B58800ED7120 /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0DD7AA23D1B58800ED7120 /* MusicCell.xib */; };
+		CE0DD7AE23D1B7AA00ED7120 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7AD23D1B7AA00ED7120 /* NSObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		CE0DD78C23D1AEF100ED7120 /* track11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track11.mp3; sourceTree = "<group>"; };
 		CE0DD78D23D1AEF100ED7120 /* track13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track13.mp3; sourceTree = "<group>"; };
 		CE0DD78E23D1AEF100ED7120 /* track12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track12.mp3; sourceTree = "<group>"; };
+		CE0DD7A623D1B13A00ED7120 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		CE0DD7A923D1B58800ED7120 /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
+		CE0DD7AA23D1B58800ED7120 /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
+		CE0DD7AD23D1B7AA00ED7120 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 			children = (
 				CE0DD75F23D1AB7000ED7120 /* AppDelegate.swift */,
 				CE0DD76123D1AB7000ED7120 /* ViewController.swift */,
+				CE0DD7A823D1B21400ED7120 /* FirstVC */,
 				CE0DD76323D1AB7000ED7120 /* Main.storyboard */,
 				CE0DD76623D1AB7000ED7120 /* Assets.xcassets */,
 				CE0DD76823D1AB7000ED7120 /* LaunchScreen.storyboard */,
@@ -121,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0DD77423D1AC8500ED7120 /* UIView.swift */,
+				CE0DD7AD23D1B7AA00ED7120 /* NSObject.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,6 +171,16 @@
 				CE0DD78E23D1AEF100ED7120 /* track12.mp3 */,
 			);
 			path = "Музыка";
+			sourceTree = "<group>";
+		};
+		CE0DD7A823D1B21400ED7120 /* FirstVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE0DD7A623D1B13A00ED7120 /* FirstVC.swift */,
+				CE0DD7A923D1B58800ED7120 /* MusicCell.swift */,
+				CE0DD7AA23D1B58800ED7120 /* MusicCell.xib */,
+			);
+			path = FirstVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +264,7 @@
 				CE0DD79A23D1AEF200ED7120 /* track6.mp3 in Resources */,
 				CE0DD7A523D1AEF200ED7120 /* track12.mp3 in Resources */,
 				CE0DD7A423D1AEF200ED7120 /* track13.mp3 in Resources */,
+				CE0DD7AC23D1B58800ED7120 /* MusicCell.xib in Resources */,
 				CE0DD76523D1AB7000ED7120 /* Main.storyboard in Resources */,
 				CE0DD7A223D1AEF200ED7120 /* track10.mp3 in Resources */,
 				CE0DD79223D1AEF200ED7120 /* track0.mp3 in Resources */,
@@ -260,7 +281,10 @@
 				CE0DD77623D1AC8500ED7120 /* UIView.swift in Sources */,
 				CE0DD76223D1AB7000ED7120 /* ViewController.swift in Sources */,
 				CE0DD76023D1AB7000ED7120 /* AppDelegate.swift in Sources */,
+				CE0DD7AE23D1B7AA00ED7120 /* NSObject.swift in Sources */,
+				CE0DD7A723D1B13A00ED7120 /* FirstVC.swift in Sources */,
 				CE0DD77523D1AC8500ED7120 /* Constats.swift in Sources */,
+				CE0DD7AB23D1B58800ED7120 /* MusicCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
