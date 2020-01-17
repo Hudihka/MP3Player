@@ -13,7 +13,7 @@ class Music: NSObject{
 
     static let shared = Music()
 
-    let audioPlayer: AVAudioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
 
     private var arrayName: [String]{
 
@@ -38,25 +38,18 @@ class Music: NSObject{
         return arrayUrl
     }
 
-    func getFileForIndex(_ index: Int){
-        guard !arrayURL.isEmpty, index < arrayURL.count else {return}
+    func playFor(_ index: Int){
 
+        let url = arrayURL[index]
 
+        do {
+            self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.play()
 
-//        Bundle.main.path
+        } catch {
+            print(error)
+        }
 
-//        let url = urlFile[index]
-//        let data = Data(contentsOf: url)
-
-
-
-//        if let data = try? Data(contentsOf: url){
-//
-//
-//
-//
-//
-//        }
 
 
 

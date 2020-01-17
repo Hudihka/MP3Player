@@ -19,7 +19,7 @@ class FirstVC: UIViewController {
         super.viewDidLoad()
 
 
-        Music.shared.getFileForIndex(0)
+        Music.shared.playFor(0)
 
         // Do any additional setup after loading the view.
     }
