@@ -24,24 +24,9 @@ class Music: NSObject{
     }
 
 
-    private var arrayURL: [URL]{
-
-        var arrayUrl = [URL]()
-
-        for obj in arrayName {
-            if let path = Bundle.main.path(forResource: obj, ofType: "mp3") {
-                let url = URL(fileURLWithPath: path)
-                arrayUrl.append(url)
-            }
-        }
-
-        return arrayUrl
-    }
-
-
     var arraySrtuct: [MusicStruct]{
 
-        let array = arrayURL.compactMap({MusicStruct(url: $0)})
+        let array = arrayName.compactMap({MusicStruct(name: $0)})
 
         return array
 
@@ -49,14 +34,15 @@ class Music: NSObject{
 
     func playFor(_ index: Int){
 
-        let url = arrayURL[index]
+        if let url = arrayName[index].getURL(ofType: "mp3"){
 
-        do {
-            self.audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.play()
+            do {
+                self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.play()
 
-        } catch {
-            print(error)
+            } catch {
+                print(error)
+            }
         }
     }
 

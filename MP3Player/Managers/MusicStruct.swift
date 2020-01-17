@@ -10,60 +10,93 @@ import Foundation
 import UIKit
 import MediaPlayer
 
+typealias TuplSongInfo = (title: String, artist: String?, image: UIImage)
+
 struct MusicStruct {
-    var title: String    = "Name"  // название трека
-    var subTitle: String = "Last Name"
-    var album: String    = "Album"
-    var artist: String   = "Artist"
 
-    var imageAlbums: UIImage? = UIImage(named: "placeholder")
+    private var asset: AVAsset?
 
-    var lenghtTrack = "00:00"
+    private var name: String = "Name"
 
-    init(url: URL) {
+    init(name: String) {
 
-        let player = AVPlayerItem(url: url)
-        let metadata = player.asset.metadata
+        self.name = name
 
+        if let url = name.getURL(ofType: "mp3") {
+            let player = AVPlayerItem(url: url)
+            self.asset = player.asset
+//            self.duration = player.asset.duration
+//
+
+        }
+
+    }
+
+
+    var content: TuplSongInfo {
+
+        let image = UIImage(named: "placeholder") ?? UIImage()
+
+        var tupl: TuplSongInfo = (title: self.name, artist: nil, image: image)
+
+        guard let metadata = asset?.metadata else {
+            return tupl
+        }
 
         for item in metadata {
             switch item.commonKey {
             case .commonKeyTitle?:
+
                 if let text = item.stringValue {
-                    title = text
+                    tupl.title = text
                 }
-            case .commonKeyType?:
-                if let text = item.stringValue {
-                    subTitle = text
-                }
-            case .commonKeyAlbumName?:
-                if let text = item.stringValue {
-                    album = text
-                }
+
             case .commonKeyArtist?:
-                if let text = item.stringValue {
-                    artist = text
-                }
+                tupl.artist = item.stringValue
             case .commonKeyArtwork?:
-                ///
 
-                if let data = item.dataValue{
-                    print("есть дата")
+                if let data = item.dataValue, let image = UIImage(data: data) {
+                    tupl.image = image
                 }
-
-//                if let data = item.dataValue, let image = UIImage(data: data) {
-//                   imageAlbums = image
-//                }
             case .none: break
             default: break
             }
         }
 
+        return tupl
 
     }
 
+    var duration: String{
+
+        if let duration = asset?.duration{
+            return duration.stringFormat
+        }
+
+        return "--:--"
+    }
 
 
+}
+
+extension CMTime{
+
+    var stringFormat: String{
+
+        let count = Int(CMTimeGetSeconds(self))
+
+        let countSeconds: String = (count % 60).timeText
+        let countMin: String = (count / 60).timeText
+
+        return "\(countMin):\(countSeconds)"
+    }
+}
+
+extension Int{
+
+    var timeText: String{
+        return self > 9 ? "\(self)" : "0\(self)"
+    }
 
 
 }

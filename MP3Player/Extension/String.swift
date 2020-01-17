@@ -22,6 +22,15 @@ extension String {
 
     }
 
+    func getURL(ofType: String) -> URL?{
+
+        if let path = Bundle.main.path(forResource: self, ofType: ofType) {
+            return URL(fileURLWithPath: path)
+        }
+
+        return nil
+    }
+
 
 
 }

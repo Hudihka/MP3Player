@@ -13,11 +13,13 @@ class FirstVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     let manager = Music.shared
+    var dataArray = [MusicStruct]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         desingTableView()
+        dataArray = manager.arraySrtuct
 
     }
 
@@ -39,7 +41,7 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource{
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.arraySrtuct.count
+        return dataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,7 +51,7 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource{
                 fatalError("MusicCell")
         }
 
-        cell.model = manager.arraySrtuct[indexPath.row]
+        cell.model = dataArray[indexPath.row]
         return cell
     }
 

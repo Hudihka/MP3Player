@@ -20,11 +20,13 @@ class MusicCell: UITableViewCell {
 
     var model: MusicStruct? {
         didSet{
-            if let model = model{
-                placeholderView.image = model.imageAlbums
-                labelTitle.text = model.title
-                labelSubtitle.text = model.artist
-                labelLenght.text = model.album
+            if let model = model {
+                let tupl = model.content
+
+                placeholderView.image = tupl.image
+                labelTitle.text       = tupl.title
+                labelSubtitle.text    = tupl.artist
+                labelLenght.text      = model.duration
             }
         }
     }
