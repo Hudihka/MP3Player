@@ -12,16 +12,13 @@ class FirstVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var dataArray = [String]()
-
+    let manager = Music.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        desingTableView()
 
-        Music.shared.playFor(0)
-
-        // Do any additional setup after loading the view.
     }
 
 
@@ -42,7 +39,7 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource{
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray.count
+        return manager.arraySrtuct.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,21 +49,15 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource{
                 fatalError("MusicCell")
         }
 
-//        cell.selectColor()
-//        cell.model = dataArray[indexPath.row]
-//        cell.delegate = self
-//
-//        cell.isLast = tableView.isLastCell(index: indexPath)
-
+        cell.model = manager.arraySrtuct[indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-//        let VC = NotificationOptionsVC.route(modelNotific: dataArray[indexPath.row])
-//        VC.delegate = self
-//        self.navigationController?.pushViewController(VC, animated: true)
+        manager.playFor(indexPath.row)
+
     }
 
 

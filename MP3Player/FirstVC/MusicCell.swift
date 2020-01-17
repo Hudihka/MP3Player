@@ -18,6 +18,18 @@ class MusicCell: UITableViewCell {
     @IBOutlet weak var labelLenght: UILabel!
 
 
+    var model: MusicStruct? {
+        didSet{
+            if let model = model{
+                placeholderView.image = model.imageAlbums
+                labelTitle.text = model.title
+                labelSubtitle.text = model.artist
+                labelLenght.text = model.album
+            }
+        }
+    }
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         

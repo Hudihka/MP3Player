@@ -38,6 +38,15 @@ class Music: NSObject{
         return arrayUrl
     }
 
+
+    var arraySrtuct: [MusicStruct]{
+
+        let array = arrayURL.compactMap({MusicStruct(url: $0)})
+
+        return array
+
+    }
+
     func playFor(_ index: Int){
 
         let url = arrayURL[index]
@@ -49,12 +58,10 @@ class Music: NSObject{
         } catch {
             print(error)
         }
-
-
-
-
-
     }
+
+
+
 
 
 
