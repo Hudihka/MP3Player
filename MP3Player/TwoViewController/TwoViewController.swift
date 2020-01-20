@@ -10,7 +10,12 @@ import UIKit
 
 class TwoViewController: UIViewController {
 
+    let manager = Music.shared
+    var model: MusicStruct?
+
     @IBOutlet weak var labelNameTrack: UILabel!
+    @IBOutlet weak var labelArtist: UILabel!
+
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -29,9 +34,36 @@ class TwoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        infoTrack()
     }
     
 
+    static func route(model: MusicStruct) -> TwoViewController{
 
+        let storuboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storuboard.instantiateViewController(withIdentifier: "TwoViewController") as! TwoViewController
+
+        vc.model = model
+
+        return vc
+
+    }
+
+    private func infoTrack(){
+
+        guard let tupl = model?.content else {return}
+
+        imageView.image = tupl.image
+        labelNameTrack.text = tupl.title
+        labelArtist.text = tupl.artist
+
+
+
+
+    }
+
+    @IBAction func buttonDismiss(_ sender: Any) {
+
+        self.dismiss(animated: true, completion: nil)
+    }
 }

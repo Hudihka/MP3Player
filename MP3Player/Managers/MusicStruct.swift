@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MediaPlayer
 
-typealias TuplSongInfo = (title: String, artist: String?, image: UIImage)
+typealias TuplSongInfo = (title: String, artist: String, image: UIImage)
 
 struct MusicStruct {
 
@@ -37,7 +37,7 @@ struct MusicStruct {
 
         let image = UIImage(named: "placeholder") ?? UIImage()
 
-        var tupl: TuplSongInfo = (title: self.name, artist: nil, image: image)
+        var tupl: TuplSongInfo = (title: self.name, artist: "Неизвестный исполнитель", image: image)
 
         guard let metadata = asset?.metadata else {
             return tupl
@@ -52,9 +52,10 @@ struct MusicStruct {
                 }
 
             case .commonKeyArtist?:
-                tupl.artist = item.stringValue
+                if let text = item.stringValue {
+                    tupl.artist = text
+                }
             case .commonKeyArtwork?:
-
                 if let data = item.dataValue, let image = UIImage(data: data) {
                     tupl.image = image
                 }
