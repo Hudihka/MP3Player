@@ -14,7 +14,7 @@ extension Music: AVAudioPlayerDelegate{
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer,
                                      successfully flag: Bool){
         nextTrack()
-        SupportNotification.notific(.finishTrack)
+        self.delegate?.nextTrack()
     }
 
     

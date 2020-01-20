@@ -9,6 +9,12 @@
 import Foundation
 import AVFoundation
 
+
+protocol ProtocolMusic: class {
+    func nextTrack()
+    func timeText(muchIsPlaying: String, muchIsLeft: String)
+}
+
 class Music: NSObject{
 
     static let shared = Music()
@@ -16,6 +22,8 @@ class Music: NSObject{
     var audioPlayer: AVAudioPlayer?
 
     var playIndex: Int? = nil
+
+    weak var delegate: ProtocolMusic?
 
     private var arrayName: [String] = []
     var arraySrtuct: [MusicStruct] = []

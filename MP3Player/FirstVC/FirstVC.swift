@@ -12,7 +12,6 @@ class FirstVC: SupportViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    let manager = Music.shared
     var dataArray = [MusicStruct]()
 
     override func viewDidLoad() {
@@ -21,10 +20,6 @@ class FirstVC: SupportViewController {
         desingTableView()
         dataArray = manager.arraySrtuct
 
-    }
-
-    override func finishTrack(notfication: Notification) {
-        self.tableView.reloadData()
     }
 
 

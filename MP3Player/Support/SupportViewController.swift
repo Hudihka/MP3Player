@@ -10,17 +10,24 @@ import UIKit
 
 class SupportViewController: UIViewController {
 
+    let manager = Music.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(finishTrack),
-                                               name: NotificationName.finishTrack.nameNotific,
-                                               object: nil)
+        manager.delegate = self
     }
 
 
-    @objc func finishTrack(notfication: Notification) {}
+}
+
+extension SupportViewController: ProtocolMusic{
+    func nextTrack() {
+//        self.tableView.reloadData()
+    }
+
+    func timeText(muchIsPlaying: String, muchIsLeft: String) {
+        <#code#>
+    }
 
 
 }

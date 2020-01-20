@@ -10,7 +10,6 @@ import UIKit
 
 class TwoViewController: SupportViewController {
 
-    let manager = Music.shared
     var model: MusicStruct?
 
     @IBOutlet weak var labelNameTrack: UILabel!
@@ -59,18 +58,11 @@ class TwoViewController: SupportViewController {
 
     }
 
-    private func reloadData(){
+    func reloadData(){
         model = manager.getActiveStruct
         infoTrack()
     }
 
-    override func finishTrack(notfication: Notification) {
-        reloadData()
-    }
-
-    func addTimeObserver() {
-
-    }
 
     @IBAction func buttonDismiss(_ sender: Any) {
 
