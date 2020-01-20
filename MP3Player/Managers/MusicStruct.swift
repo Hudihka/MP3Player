@@ -76,7 +76,23 @@ struct MusicStruct {
 
         return "--:--"
     }
+}
 
+extension MusicStruct: Hashable{
+
+    static func == (lhs: MusicStruct, rhs: MusicStruct) -> Bool {
+        if lhs.asset == rhs.asset, lhs.name == rhs.name {
+            return true
+        }
+
+        return false
+    }
+
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(id)
+//        hasher.combine(title)
+//        hasher.combine(key)
+//    }
 
 }
 

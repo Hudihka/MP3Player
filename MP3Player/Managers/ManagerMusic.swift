@@ -13,24 +13,26 @@ class Music: NSObject{
 
     static let shared = Music()
 
-    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer?
 
-    private var arrayName: [String]{
+    var playIndex: Int? = nil
 
-        var path = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: nil).compactMap({$0.components(separatedBy: "/").last})
-        path = path.sorted(by: {$0 < $1}).compactMap({$0.remove(suffix: ".mp3")})
+    private var arrayName: [String] = []
+    var arraySrtuct: [MusicStruct] = []
 
-        return path
-    }
+    func initData(){
+        let path = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: nil).compactMap({$0.components(separatedBy: "/").last})
 
-
-    var arraySrtuct: [MusicStruct]{
-
-        let array = arrayName.compactMap({MusicStruct(name: $0)})
-
-        return array
+        self.arrayName = path.sorted(by: {$0 < $1}).compactMap({$0.remove(suffix: ".mp3")})
+        self.arraySrtuct = arrayName.compactMap({MusicStruct(name: $0)})
 
     }
+
+
+    var activePlayer: Bool {
+        return self.audioPlayer?.isPlaying ?? false
+    }
+
 
     func playFor(_ index: Int){
 
@@ -38,17 +40,50 @@ class Music: NSObject{
 
             do {
                 self.audioPlayer = try AVAudioPlayer(contentsOf: url)
-                audioPlayer.play()
-
+                audioPlayer?.play()
+                self.playIndex = index
             } catch {
                 print(error)
             }
         }
     }
 
+    func nextTrack(){
+
+        guard var index = playIndex else {return}
+
+        index += 1
+
+        if index == arrayName.count {
+            index = 0
+        }
+
+        playFor(index)
+        playIndex = index
+
+    }
 
 
+    func prevTrack(){
 
+        guard var index = playIndex else {return}
+
+        index -= 1
+
+        if index == -1 {
+            index = arrayName.count - 1
+        }
+
+        playFor(index)
+        playIndex = index
+    }
+
+    var getActiveStruct: MusicStruct? {
+        guard let index = playIndex else {return nil}
+
+        return arraySrtuct[index]
+
+    }
 
 
 

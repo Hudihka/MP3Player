@@ -17,6 +17,9 @@ class MusicCell: UITableViewCell {
 
     @IBOutlet weak var labelLenght: UILabel!
 
+    @IBOutlet weak var labelStatus: UILabel!
+
+    let manager = Music.shared
 
     var model: MusicStruct? {
         didSet{
@@ -27,7 +30,18 @@ class MusicCell: UITableViewCell {
                 labelTitle.text       = tupl.title
                 labelSubtitle.text    = tupl.artist
                 labelLenght.text      = model.duration
+
+                statusCell(model)
             }
+        }
+    }
+
+
+    private func statusCell(_ model: MusicStruct){
+        if manager.audioPlayer != nil, let active = manager.getActiveStruct, active == model {
+            labelStatus.text = manager.activePlayer ? "Пауз" : "Плей"
+        } else {
+            labelStatus.text = nil
         }
     }
 

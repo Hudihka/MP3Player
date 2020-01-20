@@ -57,13 +57,36 @@ class TwoViewController: UIViewController {
         labelNameTrack.text = tupl.title
         labelArtist.text = tupl.artist
 
-
-
-
     }
 
     @IBAction func buttonDismiss(_ sender: Any) {
 
         self.dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func nextTrack(_ sender: Any) {
+        manager.nextTrack()
+        model = manager.getActiveStruct
+        infoTrack()
+    }
+
+    @IBAction func prevTrack(_ sender: Any) {
+        manager.prevTrack()
+        model = manager.getActiveStruct
+        infoTrack()
+    }
+
+    @IBAction func playPause(_ sender: UIButton) {
+
+        if manager.activePlayer {
+            manager.audioPlayer?.pause()
+            sender.setTitle("плей", for: .normal)
+        } else {
+            manager.audioPlayer?.play()
+            sender.setTitle("пауза", for: .normal)
+        }
+
+
+    }
+
 }

@@ -60,10 +60,11 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource{
 
         manager.playFor(indexPath.row)
 
+
         let VC = TwoViewController.route(model: dataArray[indexPath.row])
         self.present(VC, animated: true, completion: nil)
         
-
+        self.tableView.reloadData()
     }
 
 
