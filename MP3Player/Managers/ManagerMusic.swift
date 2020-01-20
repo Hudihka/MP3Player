@@ -40,6 +40,7 @@ class Music: NSObject{
 
             do {
                 self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+                self.audioPlayer?.delegate = self
                 audioPlayer?.play()
                 self.playIndex = index
             } catch {

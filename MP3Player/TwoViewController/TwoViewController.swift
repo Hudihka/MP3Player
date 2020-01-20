@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TwoViewController: UIViewController {
+class TwoViewController: SupportViewController {
 
     let manager = Music.shared
     var model: MusicStruct?
@@ -59,6 +59,19 @@ class TwoViewController: UIViewController {
 
     }
 
+    private func reloadData(){
+        model = manager.getActiveStruct
+        infoTrack()
+    }
+
+    override func finishTrack(notfication: Notification) {
+        reloadData()
+    }
+
+    func addTimeObserver() {
+
+    }
+
     @IBAction func buttonDismiss(_ sender: Any) {
 
         self.dismiss(animated: true, completion: nil)
@@ -66,8 +79,7 @@ class TwoViewController: UIViewController {
 
     @IBAction func nextTrack(_ sender: Any) {
         manager.nextTrack()
-        model = manager.getActiveStruct
-        infoTrack()
+        reloadData()
     }
 
     @IBAction func prevTrack(_ sender: Any) {

@@ -115,20 +115,6 @@ extension UIView {
     }
 
 
-    func addSeparator(_ leftOffset: CGFloat = 18, isDown: Bool) {
-        let yPoint: CGFloat = isDown ? self.frame.size.height - 0.5 : 0
-        let width = wDdevice - leftOffset
-
-        let separatorView = UIView(frame: CGRect(x: leftOffset,
-                                                 y: yPoint,
-                                                 width: width,
-                                                 height: 0.5))
-
-        separatorView.backgroundColor = separator
-        self.addSubview(separatorView)
-    }
-
-
     var screenshot: UIImage {
         if #available(iOS 10.0, *) {
             return UIGraphicsImageRenderer(size: bounds.size).image { _ in

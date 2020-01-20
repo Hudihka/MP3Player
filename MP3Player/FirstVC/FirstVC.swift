@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstVC: UIViewController {
+class FirstVC: SupportViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -21,6 +21,10 @@ class FirstVC: UIViewController {
         desingTableView()
         dataArray = manager.arraySrtuct
 
+    }
+
+    override func finishTrack(notfication: Notification) {
+        self.tableView.reloadData()
     }
 
 

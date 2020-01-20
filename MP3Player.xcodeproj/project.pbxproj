@@ -44,6 +44,9 @@
 		CE0DD7B323D1BE3100ED7120 /* ManagerMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7B223D1BE3100ED7120 /* ManagerMusic.swift */; };
 		CE0DD7B523D1D25800ED7120 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7B423D1D25800ED7120 /* String.swift */; };
 		CE0DD7B823D1DC5E00ED7120 /* MusicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD7B723D1DC5E00ED7120 /* MusicStruct.swift */; };
+		CE67E82E23D5D52600363A98 /* ExtensionMusicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67E82D23D5D52600363A98 /* ExtensionMusicDelegate.swift */; };
+		CE67E83023D5D59F00363A98 /* SupportNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67E82F23D5D59F00363A98 /* SupportNotification.swift */; };
+		CE67E83223D5D79300363A98 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67E83123D5D79200363A98 /* SupportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		CE0DD7B223D1BE3100ED7120 /* ManagerMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerMusic.swift; sourceTree = "<group>"; };
 		CE0DD7B423D1D25800ED7120 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CE0DD7B723D1DC5E00ED7120 /* MusicStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStruct.swift; sourceTree = "<group>"; };
+		CE67E82D23D5D52600363A98 /* ExtensionMusicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMusicDelegate.swift; sourceTree = "<group>"; };
+		CE67E82F23D5D59F00363A98 /* SupportNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportNotification.swift; sourceTree = "<group>"; };
+		CE67E83123D5D79200363A98 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				CE0DD77323D1AC8500ED7120 /* Constats.swift */,
+				CE67E82F23D5D59F00363A98 /* SupportNotification.swift */,
+				CE67E83123D5D79200363A98 /* SupportViewController.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0DD7B223D1BE3100ED7120 /* ManagerMusic.swift */,
+				CE67E82D23D5D52600363A98 /* ExtensionMusicDelegate.swift */,
 				CE0DD7B723D1DC5E00ED7120 /* MusicStruct.swift */,
 			);
 			path = Managers;
@@ -303,6 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE67E83023D5D59F00363A98 /* SupportNotification.swift in Sources */,
+				CE67E82E23D5D52600363A98 /* ExtensionMusicDelegate.swift in Sources */,
+				CE67E83223D5D79300363A98 /* SupportViewController.swift in Sources */,
 				CE0DD77623D1AC8500ED7120 /* UIView.swift in Sources */,
 				CE0DD7B323D1BE3100ED7120 /* ManagerMusic.swift in Sources */,
 				CE0DD76023D1AB7000ED7120 /* AppDelegate.swift in Sources */,
