@@ -22,11 +22,18 @@ class SupportViewController: UIViewController {
 
 extension SupportViewController: ProtocolMusic{
     func nextTrack() {
-//        self.tableView.reloadData()
+
+        if let VC = self as? FirstVC {
+            VC.tableView.reloadData()
+        } else if let VC = self as? TwoViewController{
+            VC.reloadData()
+        }
     }
 
-    func timeText(muchIsPlaying: String, muchIsLeft: String) {
-        <#code#>
+    func timeText(muchIsPlaying: String, muchIsLeft: String, progress: Double) {
+//        if let VC = self as? TwoViewController{
+//            VC.reloadData()
+//        }
     }
 
 

@@ -10,9 +10,9 @@ import Foundation
 import AVFoundation
 
 
-protocol ProtocolMusic: class {
+@objc protocol ProtocolMusic: class {
     func nextTrack()
-    func timeText(muchIsPlaying: String, muchIsLeft: String)
+    @objc optional func timeText(muchIsPlaying: String, muchIsLeft: String)
 }
 
 class Music: NSObject{
@@ -93,6 +93,9 @@ class Music: NSObject{
         return arraySrtuct[index]
 
     }
+
+
+
 
 
 

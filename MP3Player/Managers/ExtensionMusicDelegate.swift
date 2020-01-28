@@ -17,5 +17,8 @@ extension Music: AVAudioPlayerDelegate{
         self.delegate?.nextTrack()
     }
 
-    
+
+//    https://stackoverflow.com/questions/2325167/avaudioplayer-playback-progress
+
 }
+

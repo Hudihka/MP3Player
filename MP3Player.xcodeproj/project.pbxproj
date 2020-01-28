@@ -47,6 +47,8 @@
 		CE67E82E23D5D52600363A98 /* ExtensionMusicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67E82D23D5D52600363A98 /* ExtensionMusicDelegate.swift */; };
 		CE67E83023D5D59F00363A98 /* SupportNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67E82F23D5D59F00363A98 /* SupportNotification.swift */; };
 		CE67E83223D5D79300363A98 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67E83123D5D79200363A98 /* SupportViewController.swift */; };
+		CE91A6AA23E0292E0062F68B /* MusicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE91A6A923E0292E0062F68B /* MusicHeaderView.xib */; };
+		CE91A6AC23E0295F0062F68B /* MusicHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A6AB23E0295F0062F68B /* MusicHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		CE67E82D23D5D52600363A98 /* ExtensionMusicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMusicDelegate.swift; sourceTree = "<group>"; };
 		CE67E82F23D5D59F00363A98 /* SupportNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportNotification.swift; sourceTree = "<group>"; };
 		CE67E83123D5D79200363A98 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
+		CE91A6A923E0292E0062F68B /* MusicHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicHeaderView.xib; sourceTree = "<group>"; };
+		CE91A6AB23E0295F0062F68B /* MusicHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 			children = (
 				CE0DD75F23D1AB7000ED7120 /* AppDelegate.swift */,
 				CE0DD7B623D1DC2E00ED7120 /* Managers */,
+				CE91A6A823E027720062F68B /* ViewHeader */,
 				CE0DD7B123D1BC6F00ED7120 /* TwoViewController */,
 				CE0DD7A823D1B21400ED7120 /* FirstVC */,
 				CE0DD76323D1AB7000ED7120 /* Main.storyboard */,
@@ -217,6 +222,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		CE91A6A823E027720062F68B /* ViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				CE91A6A923E0292E0062F68B /* MusicHeaderView.xib */,
+				CE91A6AB23E0295F0062F68B /* MusicHeaderView.swift */,
+			);
+			path = ViewHeader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +294,7 @@
 				CE0DD79523D1AEF200ED7120 /* track1.mp3 in Resources */,
 				CE0DD79423D1AEF200ED7120 /* track21.mp3 in Resources */,
 				CE0DD79F23D1AEF200ED7120 /* track15.mp3 in Resources */,
+				CE91A6AA23E0292E0062F68B /* MusicHeaderView.xib in Resources */,
 				CE0DD79B23D1AEF200ED7120 /* track7.mp3 in Resources */,
 				CE0DD79123D1AEF200ED7120 /* track2.mp3 in Resources */,
 				CE0DD78F23D1AEF200ED7120 /* track3.mp3 in Resources */,
@@ -323,6 +338,7 @@
 				CE0DD7AE23D1B7AA00ED7120 /* NSObject.swift in Sources */,
 				CE0DD7A723D1B13A00ED7120 /* FirstVC.swift in Sources */,
 				CE0DD7B023D1BC6700ED7120 /* TwoViewController.swift in Sources */,
+				CE91A6AC23E0295F0062F68B /* MusicHeaderView.swift in Sources */,
 				CE0DD77523D1AC8500ED7120 /* Constats.swift in Sources */,
 				CE0DD7AB23D1B58800ED7120 /* MusicCell.swift in Sources */,
 			);
